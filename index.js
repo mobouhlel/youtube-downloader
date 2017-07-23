@@ -14,7 +14,6 @@ app.get('/downloader',function(req,res){
     res.sendFile(__dirname + '/front-end.html');
 });
 
-var link;
 app.post('/downloader/success',urlencodedParser,function(req,res){
 
         ytdl(JSON.stringify(req.body)).pipe(fs.createWriteStream('video.mp4'));
